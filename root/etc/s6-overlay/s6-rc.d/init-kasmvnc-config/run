@@ -4,7 +4,7 @@
 if [[ ! -f /config/.config/openbox/autostart ]]; then
   mkdir -p /config/.config/openbox
   cp /defaults/autostart /config/.config/openbox/autostart
-  chown -R abc:abc /config/.config/openbox
+  chown -R root:root /config/.config/openbox
 fi
 if [[ ! -f /config/.config/openbox/menu.xml ]]; then
   mkdir -p /config/.config/openbox && \
@@ -51,12 +51,12 @@ if [ ! -f "${HOME}/.local/bin/proot-apps" ]; then
   mkdir -p ${HOME}/.local/bin/
   cp /proot-apps/* ${HOME}/.local/bin/
   echo 'export PATH="$HOME/.local/bin:$PATH"' >> $HOME/.bashrc
-  chown root:root \
+  chown abc:abc \
     ${HOME}/.bashrc \
     ${HOME}/.local/ \
     ${HOME}/.local/bin \
     ${HOME}/.local/bin/{ncat,proot-apps,proot,jq,pversion}
 elif ! diff -q /proot-apps/pversion ${HOME}/.local/bin/pversion > /dev/null; then
   cp /proot-apps/* ${HOME}/.local/bin/
-  chown root:root ${HOME}/.local/bin/{ncat,proot-apps,proot,jq,pversion}
+  chown abc:abc ${HOME}/.local/bin/{ncat,proot-apps,proot,jq,pversion}
 fi
