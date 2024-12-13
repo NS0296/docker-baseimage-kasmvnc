@@ -368,6 +368,11 @@ RUN \
   echo "root:root" | chpasswd && \
   usermod -s /bin/bash root && \
   usermod -aG sudo root && \
+  sed -e 's/%sudo	ALL=(ALL:ALL) ALL/%sudo ALL=(ALL:ALL) NOPASSWD: ALL/g' \
+    -i /etc/sudoers && \
+  echo "abc:abc" | chpasswd && \
+  usermod -s /bin/bash abc && \
+  usermod -aG sudo abc && \
   echo "**** proot-apps ****" && \
   mkdir /proot-apps/ && \
   PAPPS_RELEASE=$(curl -sX GET "https://api.github.com/repos/linuxserver/proot-apps/releases/latest" \
@@ -383,7 +388,7 @@ RUN \
   echo "kasm-user:kasm" | chpasswd && \
   usermod -aG sudo kasm-user && \
   mkdir -p /home/kasm-user && \
-  chown 1000:1000 /home/kasm-user && \
+  chown 1000:root /home/kasm-user && \
   mkdir -p /var/run/pulse && \
   chown 1000:root /var/run/pulse && \
   mkdir -p /kasmbins && \
