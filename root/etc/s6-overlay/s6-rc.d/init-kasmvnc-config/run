@@ -9,7 +9,7 @@ fi
 if [[ ! -f /config/.config/openbox/menu.xml ]]; then
   mkdir -p /config/.config/openbox && \
   cp /defaults/menu.xml /config/.config/openbox/menu.xml && \
-  chown -R abc:abc /config/.config
+  chown -R root:root /config/.config
 fi
 if [[ -f /usr/local/etc/kasmvnc/kasmvnc.yaml.lsio ]]; then
   mv \
