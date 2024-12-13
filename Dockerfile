@@ -365,9 +365,9 @@ RUN \
   echo "**** user perms ****" && \
   sed -e 's/%sudo	ALL=(ALL:ALL) ALL/%sudo ALL=(ALL:ALL) NOPASSWD: ALL/g' \
     -i /etc/sudoers && \
-  echo "abc:abc" | chpasswd && \
-  usermod -s /bin/bash abc && \
-  usermod -aG sudo abc && \
+  echo "root:root" | chpasswd && \
+  usermod -s /bin/bash root && \
+  usermod -aG sudo root && \
   echo "**** proot-apps ****" && \
   mkdir /proot-apps/ && \
   PAPPS_RELEASE=$(curl -sX GET "https://api.github.com/repos/linuxserver/proot-apps/releases/latest" \
