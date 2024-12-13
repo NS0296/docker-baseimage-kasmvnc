@@ -4,7 +4,7 @@
 if [[ ! -f /config/.config/openbox/autostart ]]; then
   mkdir -p /config/.config/openbox
   cp /defaults/autostart /config/.config/openbox/autostart
-  chown -R root:root /config/.config/openbox
+  chown -R abc:abc /config/.config/openbox
 fi
 if [[ ! -f /config/.config/openbox/menu.xml ]]; then
   mkdir -p /config/.config/openbox && \
