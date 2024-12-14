@@ -388,7 +388,7 @@ RUN \
   echo "kasm-user:kasm" | chpasswd && \
   usermod -aG sudo kasm-user && \
   mkdir -p /home/kasm-user && \
-  chown 1000:root /home/kasm-user && \
+  chown 1000:1000 /home/kasm-user && \
   mkdir -p /var/run/pulse && \
   chown 1000:root /var/run/pulse && \
   mkdir -p /kasmbins && \
