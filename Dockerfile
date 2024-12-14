@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 FROM node:12-buster AS wwwstage
-USER root
+#USER root
 
 ARG KASMWEB_RELEASE="46412d23aff1f45dffa83fafb04a683282c8db58"
 
