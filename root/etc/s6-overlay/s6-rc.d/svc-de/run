@@ -1,5 +1,6 @@
 #!/usr/bin/with-contenv bash
 
 cd $HOME
-exec s6-setuidgid root \
+exec s6-setuidgid root xterm
+exec s6-setuidgid abc \
   /bin/bash /defaults/startwm.sh
