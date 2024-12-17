@@ -2,6 +2,5 @@
 
 cd $HOME
 
-exec s6-setuidgid abc \
+exec s6-setuidgid root \
   /bin/bash /defaults/startwm.sh
-exec s6-setuidgid root xterm
